@@ -1,5 +1,8 @@
-export function isMatch (s: string, p: string) {
-  console.log(s, p)
+export function isMatch (s: string, p: string): boolean {
+  if (p.indexOf('*') === -1) {
+    return p.length === s.length
+  }
+  return new RegExp(p).test(s)
 }
 
-isMatch('1', '2')
+console.log(isMatch("mississippi", "mis*is*p*."))
