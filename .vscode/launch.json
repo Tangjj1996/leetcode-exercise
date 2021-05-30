@@ -1,0 +1,12 @@
+{
+  "configurations": [
+  {
+    "name": "typescript ndoe project01",
+    "type": "node",
+    "request": "launch",
+    "program": "${workspaceFolder}/src/series01-regex-match.ts",
+    "preLaunchTask": "tsc: build - tsconfig.json",
+    "outFiles": ["${workspaceFolder}/build/**/*.js"]
+  }
+  ]
+}
