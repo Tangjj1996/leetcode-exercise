@@ -28,19 +28,19 @@ function intToRoman(num: number): string {
         res += roman[len].head
       }
     } else if (targetNum === 4) {
-      res = roman[len].head + roman[len].next
+      res += roman[len].head + roman[len].next
     } else if (targetNum < 9) {
-      res = roman[len].next!
+      res += roman[len].next!
       while (targetNum-- > 5) {
         res += roman[len].head
       }
     } else {
-      res = roman[len].head + roman[len + 1].head
+      res += roman[len].head + roman[len + 1].head
     }
   }
   return res
 }
 
-const result = intToRoman(8)
+const result = intToRoman(58)
 
 console.log(result)

@@ -1,41 +1,47 @@
 "use strict";
 function intToRoman(num) {
-    var romanMap = new Map([
-        [0, 'I'],
-        [5, 'V'],
-        [10, 'X'],
-        [50, 'L'],
-        [100, 'C'],
-        [500, 'D'],
-        [1000, 'M']
-    ]);
+    var roman = [
+        {
+            head: 'I',
+            next: 'V',
+        },
+        {
+            head: 'X',
+            next: 'L',
+        },
+        {
+            head: 'C',
+            next: 'D',
+        },
+        {
+            head: 'M',
+        },
+    ];
     var res = '';
     var len = String(num).length;
+    var totalLen = len;
     while (len--) {
-        // 一位数
-        if (len === 0) {
-            if (num < 4) {
-                while (num--) {
-                    res += romanMap.get(0);
-                }
+        var targetNum = Number(String(num)[totalLen - len - 1]);
+        if (targetNum < 4) {
+            while (targetNum--) {
+                res += roman[len].head;
             }
-            else if (num === 4) {
-                res = romanMap.get(0) + romanMap.get(5);
+        }
+        else if (targetNum === 4) {
+            res = roman[len].head + roman[len].next;
+        }
+        else if (targetNum < 9) {
+            res = roman[len].next;
+            while (targetNum-- > 5) {
+                res += roman[len].head;
             }
-            else if (num < 9) {
-                res = romanMap.get(5);
-                while (num-- > 5) {
-                    res += romanMap.get(0);
-                }
-            }
-            else {
-                res = romanMap.get(0) + romanMap.get(10);
-            }
+        }
+        else {
+            res = roman[len].head + roman[len + 1].head;
         }
     }
     return res;
 }
-;
-var result = intToRoman(8);
+var result = intToRoman(58);
 console.log(result);
 //# sourceMappingURL=series03-roman.js.map
