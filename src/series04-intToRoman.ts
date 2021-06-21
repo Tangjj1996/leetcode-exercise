@@ -1,19 +1,4 @@
-type romanType =
-  | 'I'
-  | 'V'
-  | 'X'
-  | 'L'
-  | 'C'
-  | 'D'
-  | 'M'
-  | 'IV'
-  | 'IX'
-  | 'XL'
-  | 'XC'
-  | 'CD'
-  | 'CM'
-
-function romanToInt<T extends romanType>(s: T): number {
+function romanToInt(s: string): number {
   const romanMap = {
     I: 1,
     V: 5,
@@ -35,8 +20,11 @@ function romanToInt<T extends romanType>(s: T): number {
   const totalLen = len
 
   while (len) {
-    if (Reflect.has(romanMap, s[totalLen - len])) {
-      num += romanMap[s[totalLen - len]]
+    if (Reflect.has(romanMap, s[totalLen - len] + s[totalLen - len + 1])) {
+      num += (romanMap as any)[s[totalLen - len] + s[totalLen - len + 1]]
+      len -= 2
+    } else if (Reflect.has(romanMap, s[totalLen - len])) {
+      num += (romanMap as any)[s[totalLen - len]]
       len--
     }
   }
@@ -44,4 +32,5 @@ function romanToInt<T extends romanType>(s: T): number {
   return num
 }
 
-romanToInt('IV')
+export const res = romanToInt('LVIII')
+console.log(res)
