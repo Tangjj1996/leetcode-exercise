@@ -1,4 +1,4 @@
-function romanToInt(s: string): number {
+export function romanToInt(s: string): number {
   const romanMap = {
     I: 1,
     V: 5,
@@ -32,5 +32,5 @@ function romanToInt(s: string): number {
   return num
 }
 
-export const res = romanToInt('LVIII')
+const res = romanToInt('LVIII')
 console.log(res)

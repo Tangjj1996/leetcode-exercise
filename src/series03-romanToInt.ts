@@ -1,4 +1,4 @@
-function intToRoman(num: number): string {
+export function intToRoman(num: number): string {
   const roman = [
     {
       head: 'I',

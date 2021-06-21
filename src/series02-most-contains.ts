@@ -12,8 +12,10 @@
 //   return maxArea
 // }
 
-function maxArea(height: number[]): number {
-  let i = 0, j = height.length - 1, res = 0
+export function maxArea(height: number[]): number {
+  let i = 0,
+    j = height.length - 1,
+    res = 0
 
   while (i < j) {
     const hmin = Math.min(height[i], height[j])
@@ -28,8 +30,7 @@ function maxArea(height: number[]): number {
   return res
 }
 
-
-const lits = [1,8,6,2,5,4,8,3,7]
+const lits = [1, 8, 6, 2, 5, 4, 8, 3, 7]
 const res = maxArea(lits)
 
 console.log(res)

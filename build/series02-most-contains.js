@@ -12,6 +12,8 @@
 //   }
 //   return maxArea
 // }
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.maxArea = void 0;
 function maxArea(height) {
     var i = 0, j = height.length - 1, res = 0;
     while (i < j) {
@@ -26,6 +28,7 @@ function maxArea(height) {
     }
     return res;
 }
+exports.maxArea = maxArea;
 var lits = [1, 8, 6, 2, 5, 4, 8, 3, 7];
 var res = maxArea(lits);
 console.log(res);
