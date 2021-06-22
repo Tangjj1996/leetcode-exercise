@@ -39,6 +39,14 @@
       "program": "${workspaceFolder}/src/series05-prefix.ts",
       "preLaunchTask": "tsc: build - tsconfig.json",
       "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    },
+    {
+      "name": "typescript ndoe project06",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/series06-threeSum.ts",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/build/**/*.js"]
     }
   ]
 }
