@@ -55,6 +55,14 @@
       "program": "${workspaceFolder}/src/series07-threeSumClosest.ts",
       "preLaunchTask": "tsc: build - tsconfig.json",
       "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    },
+    {
+      "name": "typescript ndoe project08",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/series08-letterCombinations.ts",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/build/**/*.js"]
     }
   ]
 }

@@ -29,10 +29,8 @@ function threeSumClosest(nums, target) {
                     distance: Math.abs(sum - target),
                     sum: sum,
                 });
-                while (left < right) {
-                    while (left < right && nums[right] === nums[right - 1]) {
-                        right--;
-                    }
+                while (left < right && nums[right] === nums[right - 1]) {
+                    right--;
                 }
                 right--;
             }
