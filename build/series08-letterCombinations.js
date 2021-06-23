@@ -1,5 +1,7 @@
 "use strict";
-function leeterCombinations(digits) {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.letterCombinations = void 0;
+function letterCombinations(digits) {
     if (!digits)
         return [];
     var letterMap = new Map([
@@ -15,12 +17,12 @@ function leeterCombinations(digits) {
     var arr = [];
     for (var i = 0, len = digits.length; i < len; i++) {
         var innerArr = letterMap.get(Number(digits.charAt(i)));
-        if (i === 0) {
-            // 第一次先放到里边
-            arr = innerArr;
-        }
         var jArr = [];
         for (var j = 0, jLen = innerArr.length; j < jLen; j++) {
+            if (i === 0) {
+                arr = innerArr;
+                break;
+            }
             for (var k = 0, kLen = arr.length; k < kLen; k++) {
                 var str = arr[k] + innerArr[j];
                 jArr.push(str);
@@ -30,7 +32,8 @@ function leeterCombinations(digits) {
     }
     return arr;
 }
-var digits = '23';
-var res = leeterCombinations(digits);
+exports.letterCombinations = letterCombinations;
+var digits = '2';
+var res = letterCombinations(digits);
 console.log(res);
 //# sourceMappingURL=series08-letterCombinations.js.map
