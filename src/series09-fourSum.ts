@@ -5,10 +5,13 @@ export function fourSum(nums: number[], target: number): number[][] {
   nums.sort((a, b) => a - b)
   const arr = []
 
-  for (let i = 0, len = nums.length; i < len; i++) {
-    for (let j = i + 1; j < len; j++) {
-      if (len - i < 4 && nums[i] === nums[j]) {
-        i = j
+  for (let i = 0, len = nums.length - 3; i < len; i++) {
+    if (i > 0 && nums[i] === nums[i - 1]) {
+      continue
+    }
+
+    for (let j = i + 1, jLen = nums.length - 2; j < jLen; j++) {
+      if (j > i + 1 && nums[j] === nums[j - 1]) {
         continue
       }
 
@@ -38,7 +41,7 @@ export function fourSum(nums: number[], target: number): number[][] {
   return arr
 }
 
-const nums = [2, 2, 2, 2, 2],
-  target = 8
+const nums = [-2, -1, -1, 1, 1, 2, 2],
+  target = 0
 const res = fourSum(nums, target)
 console.log(res)

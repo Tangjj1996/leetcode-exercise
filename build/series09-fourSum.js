@@ -7,10 +7,12 @@ function fourSum(nums, target) {
     }
     nums.sort(function (a, b) { return a - b; });
     var arr = [];
-    for (var i = 0, len = nums.length; i < len; i++) {
-        for (var j = i + 1; j < len; j++) {
-            if (len - i < 4 && nums[i] === nums[j]) {
-                i = j;
+    for (var i = 0, len = nums.length - 3; i < len; i++) {
+        if (i > 0 && nums[i] === nums[i - 1]) {
+            continue;
+        }
+        for (var j = i + 1, jLen = nums.length - 2; j < jLen; j++) {
+            if (j > 1 && nums[j] === nums[j - 1]) {
                 continue;
             }
             var left = j + 1;
@@ -39,7 +41,7 @@ function fourSum(nums, target) {
     return arr;
 }
 exports.fourSum = fourSum;
-var nums = [2, 2, 2, 2, 2], target = 8;
+var nums = [-2, -1, -1, 1, 1, 2, 2], target = 0;
 var res = fourSum(nums, target);
 console.log(res);
 //# sourceMappingURL=series09-fourSum.js.map
