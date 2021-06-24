@@ -20,7 +20,20 @@ var ListNode = /** @class */ (function () {
     return ListNode;
 }());
 function removeNthFromEnd(head, n) {
-    return null;
+    var _a;
+    var first = head; // 快指针
+    for (var i = 0; i < n; i++) {
+        first = first === null || first === void 0 ? void 0 : first.next;
+    }
+    if (!first)
+        return head === null || head === void 0 ? void 0 : head.next; // 如果n+1大于链表长度 返回头结点
+    var second = head; // 慢指针
+    while (first.next) {
+        first = first === null || first === void 0 ? void 0 : first.next;
+        second = second === null || second === void 0 ? void 0 : second.next;
+    }
+    second.next = (_a = second === null || second === void 0 ? void 0 : second.next) === null || _a === void 0 ? void 0 : _a.next; // 让慢指针指向后面的后一个节点（删除后一个节点）
+    return head;
 }
 exports.removeNthFromEnd = removeNthFromEnd;
 var head = {
@@ -40,17 +53,5 @@ var head = {
     },
 }, n = 2;
 var res = removeNthFromEnd(head, n);
-// console.log(res)
-var reverseList = function (head) {
-    var pre = null;
-    for (var cur = head; cur;) {
-        var nextTemp = cur.next;
-        cur.next = pre;
-        pre = cur;
-        cur = nextTemp;
-    }
-    return pre;
-};
-reverseList(head);
-console.log('this is the head:::====>', head);
+console.log(res);
 //# sourceMappingURL=series10-removeNthFromEnd.js.map

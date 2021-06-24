@@ -79,6 +79,14 @@
       "program": "${workspaceFolder}/src/series10-removeNthFromEnd.ts",
       "preLaunchTask": "tsc: build - tsconfig.json",
       "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    },
+    {
+      "name": "typescript node project11",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/series11-isValid.ts",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/build/**/*.js"]
     }
   ]
 }
