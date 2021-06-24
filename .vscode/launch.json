@@ -71,6 +71,14 @@
       "program": "${workspaceFolder}/src/series09-fourSum.ts",
       "preLaunchTask": "tsc: build - tsconfig.json",
       "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    },
+    {
+      "name": "typescript node project10",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/series10-removeNthFromEnd.ts",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/build/**/*.js"]
     }
   ]
 }

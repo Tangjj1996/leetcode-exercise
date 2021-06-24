@@ -12,7 +12,7 @@ function fourSum(nums, target) {
             continue;
         }
         for (var j = i + 1, jLen = nums.length - 2; j < jLen; j++) {
-            if (j > 1 && nums[j] === nums[j - 1]) {
+            if (j > i + 1 && nums[j] === nums[j - 1]) {
                 continue;
             }
             var left = j + 1;
