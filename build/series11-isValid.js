@@ -9,18 +9,29 @@ function isValid(s) {
             stack.push(s[i]);
         }
         else if (rigthFlag.includes(s[i])) {
-            var index_1 = rigthFlag.findIndex(function (item) { return item === s[i]; });
-            var aIndex = stack.findIndex(function (item) { return item === leftFlag[index_1]; });
-            aIndex !== -1 && stack.splice(aIndex, 1);
+            var index = rigthFlag.findIndex(function (item) { return item === s[i]; });
+            var aIndex = -1;
+            for (var aIn = stack.length - 1; aIn > 0; aIn--) {
+                if (stack[aIn] === leftFlag[index]) {
+                    aIndex = aIn;
+                    break;
+                }
+            }
+            if (aIndex === -1 || aIndex !== stack.length - 1) {
+                return { value: false };
+            }
+            stack.splice(aIndex, 1);
         }
     };
     for (var i = 0, len = s.length; i < len; i++) {
-        _loop_1(i, len);
+        var state_1 = _loop_1(i, len);
+        if (typeof state_1 === "object")
+            return state_1.value;
     }
     return stack.length === 0;
 }
 exports.isValid = isValid;
-var s = '([)]';
+var s = '(([]){})';
 var res = isValid(s);
 console.log(res);
 //# sourceMappingURL=series11-isValid.js.map

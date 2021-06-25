@@ -4,20 +4,28 @@ export function isValid(s: string): boolean {
   const stack: string[] = []
   for (let i = 0, len = s.length; i < len; i++) {
     if (leftFlag.includes(s[i])) {
-      if (stack.length) {
-        return false
-      }
       stack.push(s[i])
     } else if (rigthFlag.includes(s[i])) {
       const index = rigthFlag.findIndex((item) => item === s[i])
-      const aIndex = stack.findIndex((item) => item === leftFlag[index])
-      aIndex !== -1 && stack.splice(aIndex, 1)
+      let aIndex = -1
+
+      for (let aIn = stack.length - 1; aIn >= 0; aIn--) {
+        if (stack[aIn] === leftFlag[index]) {
+          aIndex = aIn
+          break
+        }
+      }
+
+      if (aIndex === -1 || aIndex !== stack.length - 1) {
+        return false
+      }
+      stack.splice(aIndex, 1)
     }
   }
 
-  return true
+  return stack.length === 0
 }
 
-const s = '{()}'
+const s = '[[[]]]'
 const res = isValid(s)
 console.log(res)
