@@ -1,0 +1,10 @@
+name: leetcode-learn-ci_cd
+on: [push]
+jobs:
+  just-a-test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: npm install -g shx
+      - run: shx -v
