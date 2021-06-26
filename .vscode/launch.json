@@ -95,6 +95,14 @@
       "program": "${workspaceFolder}/src/series12-mergeTwoLists.ts",
       "preLaunchTask": "tsc: build - tsconfig.json",
       "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    },
+    {
+      "name": "typescript node project13",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/series13-generateParenthesis.ts",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/build/**/*.js"]
     }
   ]
 }
