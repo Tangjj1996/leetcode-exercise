@@ -11,7 +11,7 @@ function isValid(s) {
         else if (rigthFlag.includes(s[i])) {
             var index = rigthFlag.findIndex(function (item) { return item === s[i]; });
             var aIndex = -1;
-            for (var aIn = stack.length - 1; aIn > 0; aIn--) {
+            for (var aIn = stack.length - 1; aIn >= 0; aIn--) {
                 if (stack[aIn] === leftFlag[index]) {
                     aIndex = aIn;
                     break;
@@ -31,7 +31,7 @@ function isValid(s) {
     return stack.length === 0;
 }
 exports.isValid = isValid;
-var s = '(([]){})';
+var s = '[[[]]]';
 var res = isValid(s);
 console.log(res);
 //# sourceMappingURL=series11-isValid.js.map

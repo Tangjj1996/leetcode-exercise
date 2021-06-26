@@ -1,90 +1,98 @@
 {
   "configurations": [
+    // {
+    //   "name": "typescript node project01",
+    //   "type": "node",
+    //   "request": "launch",
+    //   "program": "${workspaceFolder}/src/series01-regex-match.ts",
+    //   "preLaunchTask": "tsc: build - tsconfig.json",
+    //   "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    // },
+    // {
+    //   "name": "typescript node project02",
+    //   "type": "node",
+    //   "request": "launch",
+    //   "program": "${workspaceFolder}/src/series02-most-contains.ts",
+    //   "preLaunchTask": "tsc: build - tsconfig.json",
+    //   "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    // },
+    // {
+    //   "name": "typescript node project03",
+    //   "type": "node",
+    //   "request": "launch",
+    //   "program": "${workspaceFolder}/src/series03-roman.ts",
+    //   "preLaunchTask": "tsc: build - tsconfig.json",
+    //   "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    // },
+    // {
+    //   "name": "typescript node project04",
+    //   "type": "node",
+    //   "request": "launch",
+    //   "program": "${workspaceFolder}/src/series04-intToRoman.ts",
+    //   "preLaunchTask": "tsc: build - tsconfig.json",
+    //   "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    // },
+    // {
+    //   "name": "typescript node project05",
+    //   "type": "node",
+    //   "request": "launch",
+    //   "program": "${workspaceFolder}/src/series05-prefix.ts",
+    //   "preLaunchTask": "tsc: build - tsconfig.json",
+    //   "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    // },
+    // {
+    //   "name": "typescript node project06",
+    //   "type": "node",
+    //   "request": "launch",
+    //   "program": "${workspaceFolder}/src/series06-threeSum.ts",
+    //   "preLaunchTask": "tsc: build - tsconfig.json",
+    //   "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    // },
+    // {
+    //   "name": "typescript node project07",
+    //   "type": "node",
+    //   "request": "launch",
+    //   "program": "${workspaceFolder}/src/series07-threeSumClosest.ts",
+    //   "preLaunchTask": "tsc: build - tsconfig.json",
+    //   "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    // },
+    // {
+    //   "name": "typescript node project08",
+    //   "type": "node",
+    //   "request": "launch",
+    //   "program": "${workspaceFolder}/src/series08-letterCombinations.ts",
+    //   "preLaunchTask": "tsc: build - tsconfig.json",
+    //   "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    // },
+    // {
+    //   "name": "typescript node project09",
+    //   "type": "node",
+    //   "request": "launch",
+    //   "program": "${workspaceFolder}/src/series09-fourSum.ts",
+    //   "preLaunchTask": "tsc: build - tsconfig.json",
+    //   "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    // },
+    // {
+    //   "name": "typescript node project10",
+    //   "type": "node",
+    //   "request": "launch",
+    //   "program": "${workspaceFolder}/src/series10-removeNthFromEnd.ts",
+    //   "preLaunchTask": "tsc: build - tsconfig.json",
+    //   "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    // },
+    // {
+    //   "name": "typescript node project11",
+    //   "type": "node",
+    //   "request": "launch",
+    //   "program": "${workspaceFolder}/src/series11-isValid.ts",
+    //   "preLaunchTask": "tsc: build - tsconfig.json",
+    //   "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    // },
     {
-      "name": "typescript node project01",
+      "name": "typescript node project12",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceFolder}/src/series01-regex-match.ts",
-      "preLaunchTask": "tsc: build - tsconfig.json",
-      "outFiles": ["${workspaceFolder}/build/**/*.js"]
-    },
-    {
-      "name": "typescript node project02",
-      "type": "node",
-      "request": "launch",
-      "program": "${workspaceFolder}/src/series02-most-contains.ts",
-      "preLaunchTask": "tsc: build - tsconfig.json",
-      "outFiles": ["${workspaceFolder}/build/**/*.js"]
-    },
-    {
-      "name": "typescript node project03",
-      "type": "node",
-      "request": "launch",
-      "program": "${workspaceFolder}/src/series03-roman.ts",
-      "preLaunchTask": "tsc: build - tsconfig.json",
-      "outFiles": ["${workspaceFolder}/build/**/*.js"]
-    },
-    {
-      "name": "typescript node project04",
-      "type": "node",
-      "request": "launch",
-      "program": "${workspaceFolder}/src/series04-intToRoman.ts",
-      "preLaunchTask": "tsc: build - tsconfig.json",
-      "outFiles": ["${workspaceFolder}/build/**/*.js"]
-    },
-    {
-      "name": "typescript node project05",
-      "type": "node",
-      "request": "launch",
-      "program": "${workspaceFolder}/src/series05-prefix.ts",
-      "preLaunchTask": "tsc: build - tsconfig.json",
-      "outFiles": ["${workspaceFolder}/build/**/*.js"]
-    },
-    {
-      "name": "typescript node project06",
-      "type": "node",
-      "request": "launch",
-      "program": "${workspaceFolder}/src/series06-threeSum.ts",
-      "preLaunchTask": "tsc: build - tsconfig.json",
-      "outFiles": ["${workspaceFolder}/build/**/*.js"]
-    },
-    {
-      "name": "typescript node project07",
-      "type": "node",
-      "request": "launch",
-      "program": "${workspaceFolder}/src/series07-threeSumClosest.ts",
-      "preLaunchTask": "tsc: build - tsconfig.json",
-      "outFiles": ["${workspaceFolder}/build/**/*.js"]
-    },
-    {
-      "name": "typescript node project08",
-      "type": "node",
-      "request": "launch",
-      "program": "${workspaceFolder}/src/series08-letterCombinations.ts",
-      "preLaunchTask": "tsc: build - tsconfig.json",
-      "outFiles": ["${workspaceFolder}/build/**/*.js"]
-    },
-    {
-      "name": "typescript node project09",
-      "type": "node",
-      "request": "launch",
-      "program": "${workspaceFolder}/src/series09-fourSum.ts",
-      "preLaunchTask": "tsc: build - tsconfig.json",
-      "outFiles": ["${workspaceFolder}/build/**/*.js"]
-    },
-    {
-      "name": "typescript node project10",
-      "type": "node",
-      "request": "launch",
-      "program": "${workspaceFolder}/src/series10-removeNthFromEnd.ts",
-      "preLaunchTask": "tsc: build - tsconfig.json",
-      "outFiles": ["${workspaceFolder}/build/**/*.js"]
-    },
-    {
-      "name": "typescript node project11",
-      "type": "node",
-      "request": "launch",
-      "program": "${workspaceFolder}/src/series11-isValid.ts",
+      "program": "${workspaceFolder}/src/series12-mergeTwoLists.ts",
       "preLaunchTask": "tsc: build - tsconfig.json",
       "outFiles": ["${workspaceFolder}/build/**/*.js"]
     }
