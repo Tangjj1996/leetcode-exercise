@@ -103,6 +103,14 @@
       "program": "${workspaceFolder}/src/series13-generateParenthesis.ts",
       "preLaunchTask": "tsc: build - tsconfig.json",
       "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    },
+    {
+      "name": "typescript node project14",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/series14-mergeKLists.ts",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/build/**/*.js"]
     }
   ]
 }
