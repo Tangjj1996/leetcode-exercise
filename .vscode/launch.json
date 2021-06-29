@@ -111,6 +111,14 @@
       "program": "${workspaceFolder}/src/series14-mergeKLists.ts",
       "preLaunchTask": "tsc: build - tsconfig.json",
       "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    },
+    {
+      "name": "typescript node project15",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/series15-swapPairs.ts",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/build/**/*.js"]
     }
   ]
 }
