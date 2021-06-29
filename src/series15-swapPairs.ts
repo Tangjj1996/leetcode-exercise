@@ -12,7 +12,7 @@ export function swapPairs(head: ListNode | null): ListNode | null {
 }
 
 function connect(node: ListNode | null) {
-  if (node === null) {
+  if (!node) {
     return null
   }
 
@@ -20,11 +20,11 @@ function connect(node: ListNode | null) {
   let mid = node.next
   let right = mid?.next
 
-  if (mid === null) {
+  if (!mid) {
     return left
   }
   mid!.next = left
-  left = connect(right!)!
+  left.next = connect(right!)!
 
   return mid
 }
@@ -41,4 +41,4 @@ const head = {
 }
 
 const res = swapPairs(head)
-console.log(head)
+console.log(res)
