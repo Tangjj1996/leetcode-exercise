@@ -11,7 +11,7 @@ export function swapPairs(head: ListNode | null): ListNode | null {
   return connect(head)
 }
 
-function connect(node: ListNode | null) {
+function connect(node: ListNode | null): ListNode | null {
   if (!node) {
     return null
   }
@@ -24,7 +24,7 @@ function connect(node: ListNode | null) {
     return left
   }
   mid!.next = left
-  left.next = connect(right!)!
+  left.next = connect(right!)
 
   return mid
 }
