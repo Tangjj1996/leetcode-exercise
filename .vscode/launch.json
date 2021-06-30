@@ -119,6 +119,14 @@
       "program": "${workspaceFolder}/src/series15-swapPairs.ts",
       "preLaunchTask": "tsc: build - tsconfig.json",
       "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    },
+    {
+      "name": "typescript node project16",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/series16-reverseKGroup.ts",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/build/**/*.js"]
     }
   ]
 }
