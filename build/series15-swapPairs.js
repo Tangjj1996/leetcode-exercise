@@ -9,8 +9,7 @@ var ListNode = /** @class */ (function () {
     return ListNode;
 }());
 function swapPairs(head) {
-    connect(head);
-    return head;
+    return connect(head);
 }
 exports.swapPairs = swapPairs;
 function connect(node) {
@@ -24,7 +23,7 @@ function connect(node) {
         return left;
     }
     mid.next = left;
-    left = connect(right);
+    left.next = connect(right);
     return mid;
 }
 var head = {

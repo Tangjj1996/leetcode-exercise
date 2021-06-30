@@ -23,7 +23,14 @@ function connectK(head: ListNode | null, k: number): ListNode | null {
     return head
   }
 
-  if (Object.keys(head).length < k) {
+  let length = 0
+  let headPointer = head
+  while (headPointer.next) {
+    length++
+    headPointer = headPointer.next
+  }
+
+  if (length < k) {
     return head
   }
 
