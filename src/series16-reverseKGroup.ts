@@ -1,52 +1,35 @@
 class ListNode {
   val: number
-  next: ListNode | null
-  constructor(val: number, next: ListNode | null) {
+  next: ListNodeNull
+  constructor(val: number, next: ListNodeNull) {
     this.val = val
     this.next = next
   }
 }
 
-export function reverseKGroup(
-  head: ListNode | null,
-  k: number
-): ListNode | null {
-  return connectK(head, k)
+type ListNodeNull = ListNode | null
+
+export function reverseKGroup(head: ListNodeNull, k: number): ListNodeNull {
+  return null
 }
 
-function connectK(head: ListNode | null, k: number): ListNode | null {
-  if (head === null) {
-    return null
+/**
+ * 翻转node链表
+ * @param node
+ */
+function reverse(node: ListNodeNull) {
+  let pre: ListNodeNull = null,
+    cur: ListNodeNull = node,
+    next: ListNodeNull = null
+
+  while (cur !== null) {
+    next = cur.next
+    cur.next = pre
+    pre = cur
+    cur = next
   }
 
-  if (k === 1) {
-    return head
-  }
-
-  let length = 0
-  let headPointer = head
-  while (headPointer.next) {
-    length++
-    headPointer = headPointer.next
-  }
-
-  if (length < k) {
-    return head
-  }
-
-  let left: ListNode = head
-  let mid: ListNode | null = head.next
-  let right: ListNode | null
-  let pointer: ListNode | null = head // pointer指针指向head链表
-
-  for (let i = 0; i < k; i++) {
-    mid!.next = pointer
-    pointer = pointer!.next
-  }
-  right = pointer!.next // 指向尾节点
-  left.next = connectK(right!, k)
-
-  return mid
+  return pre
 }
 
 const list = {
@@ -65,5 +48,6 @@ const list = {
     },
   },
 }
-const res = connectK(list, 3)
+
+const res = reverse(list)
 console.log(res)
