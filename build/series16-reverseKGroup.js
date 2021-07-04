@@ -9,36 +9,22 @@ var ListNode = /** @class */ (function () {
     return ListNode;
 }());
 function reverseKGroup(head, k) {
-    return connectK(head, k);
+    return null;
 }
 exports.reverseKGroup = reverseKGroup;
-function connectK(head, k) {
-    if (head === null) {
-        return null;
+/**
+ * 翻转node链表
+ * @param node
+ */
+function reverse(node) {
+    var pre = null, cur = node, next = null;
+    while (cur !== null) {
+        next = cur.next;
+        cur.next = pre;
+        pre = cur;
+        cur = next;
     }
-    if (k === 1) {
-        return head;
-    }
-    var length = 0;
-    var headPointer = head;
-    while (headPointer.next) {
-        length++;
-        headPointer = headPointer.next;
-    }
-    if (length < k) {
-        return head;
-    }
-    var left = head;
-    var mid = head.next;
-    var right;
-    var pointer = head; // pointer指针指向head链表
-    for (var i = 0; i < k; i++) {
-        mid.next = pointer;
-        pointer = pointer.next;
-    }
-    right = pointer.next; // 指向尾节点
-    left.next = connectK(right, k);
-    return mid;
+    return pre;
 }
 var list = {
     val: 1,
@@ -56,6 +42,6 @@ var list = {
         },
     },
 };
-var res = connectK(list, 3);
+var res = reverseKGroup(list, 3);
 console.log(res);
 //# sourceMappingURL=series16-reverseKGroup.js.map

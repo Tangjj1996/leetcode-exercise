@@ -1,5 +1,12 @@
 {
   "configurations": [
+    {
+      "name": "Launch Program",
+      "program": "${workspaceFolder}/tst.js",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node"
+    },
     // {
     //   "name": "typescript node project01",
     //   "type": "node",
