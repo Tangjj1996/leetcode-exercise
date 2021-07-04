@@ -9,22 +9,42 @@ var ListNode = /** @class */ (function () {
     return ListNode;
 }());
 function reverseKGroup(head, k) {
-    return null;
+    return dfs(head, listLenth(head), k);
 }
 exports.reverseKGroup = reverseKGroup;
 /**
- * 翻转node链表
- * @param node
+ * 递归操作
+ * @param head
+ * @param len
+ * @param k
+ * @returns
  */
-function reverse(node) {
-    var pre = null, cur = node, next = null;
-    while (cur !== null) {
-        next = cur.next;
-        cur.next = pre;
-        pre = cur;
-        cur = next;
+function dfs(head, len, k) {
+    if (len < k) {
+        return head;
     }
-    return pre;
+    var tail = head, prev = null, temp = null;
+    for (var i = 0; i < k; i++) {
+        temp = head.next;
+        head.next = prev;
+        prev = head;
+        head = temp;
+    }
+    tail.next = dfs(head, len - k, k);
+    return prev;
+}
+/**
+ * 获取链表的长度
+ * @param {ListNode | null} head
+ * @returns {number}
+ */
+function listLenth(head) {
+    var len = 0;
+    while (head !== null) {
+        head = head.next;
+        len++;
+    }
+    return len;
 }
 var list = {
     val: 1,

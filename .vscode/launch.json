@@ -1,12 +1,5 @@
 {
   "configurations": [
-    {
-      "name": "Launch Program",
-      "program": "${workspaceFolder}/tst.js",
-      "request": "launch",
-      "skipFiles": ["<node_internals>/**"],
-      "type": "pwa-node"
-    },
     // {
     //   "name": "typescript node project01",
     //   "type": "node",
@@ -132,6 +125,14 @@
       "type": "node",
       "request": "launch",
       "program": "${workspaceFolder}/src/series16-reverseKGroup.ts",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    },
+    {
+      "name": "typescript node project17",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/series17-removeDuplicates.ts",
       "preLaunchTask": "tsc: build - tsconfig.json",
       "outFiles": ["${workspaceFolder}/build/**/*.js"]
     }
