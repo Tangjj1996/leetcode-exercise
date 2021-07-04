@@ -143,6 +143,14 @@
       "program": "${workspaceFolder}/src/series18-removeElement.ts",
       "preLaunchTask": "tsc: build - tsconfig.json",
       "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    },
+    {
+      "name": "typescript node project19",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/series19-strStr.ts",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/build/**/*.js"]
     }
   ]
 }
