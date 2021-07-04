@@ -151,6 +151,14 @@
       "program": "${workspaceFolder}/src/series19-strStr.ts",
       "preLaunchTask": "tsc: build - tsconfig.json",
       "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    },
+    {
+      "name": "typescript node project20",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/series20-divide.ts",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/build/**/*.js"]
     }
   ]
 }

@@ -9,10 +9,10 @@ function removeElement(nums, val) {
             i++;
         }
     }
-    return i + 1;
+    return i;
 }
 exports.removeElement = removeElement;
-var nums = [3, 2, 2, 3], val = 3;
+var nums = [0, 1, 2, 2, 3, 0, 4, 2], val = 2;
 var res = removeElement(nums, val);
 console.log(res);
 //# sourceMappingURL=series18-removeElement.js.map
