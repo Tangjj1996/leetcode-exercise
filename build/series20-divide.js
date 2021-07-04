@@ -20,7 +20,7 @@ function divide(dividend, divisor) {
     return Math.max(Math.pow((-2), 31), Math.min(q * flag, Math.pow(2, 31)));
 }
 exports.divide = divide;
-var dividend = 10000, divisor = -3;
+var dividend = -2147483648, divisor = -1;
 var res = divide(dividend, divisor);
 console.log(res);
 //# sourceMappingURL=series20-divide.js.map
