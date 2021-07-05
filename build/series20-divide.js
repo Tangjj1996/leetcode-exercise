@@ -6,6 +6,9 @@ function divide(dividend, divisor) {
     dividend = Math.abs(dividend);
     divisor = Math.abs(divisor);
     var q = 0, times = 0;
+    if (divisor === 1) {
+        return Math.max(Math.pow((-2), 31), Math.min(dividend * flag, Math.pow(2, 31) - 1));
+    }
     while (dividend >= divisor) {
         var cur = dividend - (divisor << times);
         if (cur >= 0) {
