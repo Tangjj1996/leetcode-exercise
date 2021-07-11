@@ -159,6 +159,14 @@
       "program": "${workspaceFolder}/src/series20-divide.ts",
       "preLaunchTask": "tsc: build - tsconfig.json",
       "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    },
+    {
+      "name": "typescript node project21",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/series21-findSubstring.ts",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/build/**/*.js"]
     }
   ]
 }
