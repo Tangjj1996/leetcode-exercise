@@ -3,23 +3,21 @@ export function nextPermutation(nums: number[]) {
   if (n === 1) {
     return
   }
-  let pivot = n - 2
+  let k = n - 1
+  while (k - 1 >= 0 && nums[k - 1] >= nums[k]) {
+    k-- // 一直到最开始那个
+  }
 
-  while (pivot > 0 && nums[pivot] >= nums[pivot + 1]) {
-    // 满足单调递增
-    pivot--
-  }
-  if (pivot < 0) {
-    // 如果都是单调递增的，直接返回最小的那个数
+  if (k === 0) {
     reverse(nums, 0, n - 1)
-    return
+  } else {
+    let u = k
+    while (u + 1 < n && nums[u + 1] > nums[k - 1]) {
+      u++
+    }
+    swap(nums, k - 1, u)
+    reverse(nums, k, n - 1)
   }
-  let lg = pivot + 1
-  while (lg < n && nums[lg] > nums[pivot]) {
-    lg++ // 找到最右侧的断层点
-  }
-  swap(nums, pivot, lg - 1) // 交换
-  reverse(nums, pivot + 1, n - 1) // 从断层点往后翻转
 }
 
 function swap(nums: number[], l: number, r: number) {
@@ -34,7 +32,7 @@ function reverse(nums: number[], l: number = 0, r: number = nums.length - 1) {
   }
 }
 
-const nums = [1, 2, 3]
+const nums = [1, 3, 2]
 nextPermutation(nums)
 
 console.log(nums)

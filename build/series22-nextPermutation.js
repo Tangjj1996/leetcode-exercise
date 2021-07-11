@@ -6,22 +6,21 @@ function nextPermutation(nums) {
     if (n === 1) {
         return;
     }
-    var pivot = n - 2;
-    while (pivot > 0 && nums[pivot] >= nums[pivot + 1]) {
-        // 满足单调递增
-        pivot--;
+    var k = n - 1;
+    while (k - 1 >= 0 && nums[k - 1] >= nums[k]) {
+        k--; // 一直到最开始那个
     }
-    if (pivot < 0) {
-        // 如果都是单调递增的，直接返回最小的那个数
+    if (k === 0) {
         reverse(nums, 0, n - 1);
-        return;
     }
-    var lg = pivot + 1;
-    while (lg < n && nums[lg] > nums[pivot]) {
-        lg++; // 找到最右侧的断层点
+    else {
+        var u = k;
+        while (u + 1 < n && nums[u + 1] > nums[k - 1]) {
+            u++;
+        }
+        swap(nums, k - 1, u);
+        reverse(nums, k, n - 1);
     }
-    swap(nums, pivot, lg - 1); // 交换
-    reverse(nums, pivot + 1, n - 1); // 从断层点往后翻转
 }
 exports.nextPermutation = nextPermutation;
 function swap(nums, l, r) {
@@ -36,7 +35,7 @@ function reverse(nums, l, r) {
         swap(nums, l++, r--);
     }
 }
-var nums = [1, 2, 3];
+var nums = [1, 3, 2];
 nextPermutation(nums);
 console.log(nums);
 //# sourceMappingURL=series22-nextPermutation.js.map
