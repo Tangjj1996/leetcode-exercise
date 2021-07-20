@@ -37,23 +37,44 @@ exports.longestValidParentheses = void 0;
  * @param s string类型
  * @returns 返回值为number
  */
+// export function longestValidParentheses(s: string): number {
+//   const n = s.length
+//   if (n === 0) return 0
+//   const dp = Array.from(new Array(n), () => 0)
+//   for (let i = 0; i < n; i++) {
+//     // i-dp[i-1]-1是与当前")"对称的位置
+//     if (
+//       s[i] === ')' &&
+//       i - dp[i - 1] - 1 >= 0 &&
+//       s[i - dp[i - 1] - 1] === '('
+//     ) {
+//       dp[i] = dp[i - 1] + dp[i - dp[i - 1] - 2 <= 0 ? 0 : i - dp[i - 1] - 2] + 2
+//     }
+//   }
+//   return Math.max(...dp)
+// }
 function longestValidParentheses(s) {
-    var n = s.length;
-    if (n === 0)
-        return 0;
-    var dp = Array.from(new Array(n), function () { return 0; });
+    var stack = [-1], n = s.length;
+    var length = 0, max_length = 0;
     for (var i = 0; i < n; i++) {
-        // i-dp[i-1]-1是与当前")"对称的位置
-        if (s[i] === ')' &&
-            i - dp[i - 1] - 1 >= 0 &&
-            s[i - dp[i - 1] - 1] === '(') {
-            dp[i] = dp[i - 1] + dp[i - dp[i - 1] - 2] + 2;
+        if (s[i] === '(') {
+            stack.push(i);
+        }
+        else {
+            stack.pop();
+            if (stack.length === 0) {
+                stack.push(i);
+            }
+            else {
+                length = i - stack[stack.length - 1];
+                max_length = Math.max(max_length, length);
+            }
         }
     }
-    return Math.max.apply(Math, dp);
+    return max_length;
 }
 exports.longestValidParentheses = longestValidParentheses;
-var s = '()';
+var s = '()(())';
 var res = longestValidParentheses(s);
 console.log(res);
 //# sourceMappingURL=series23-longsetValidParentheses.js.map

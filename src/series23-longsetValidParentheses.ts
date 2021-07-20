@@ -38,23 +38,49 @@
  * @param s string类型
  * @returns 返回值为number
  */
+// export function longestValidParentheses(s: string): number {
+//   const n = s.length
+//   if (n === 0) return 0
+//   const dp = Array.from(new Array(n), () => 0)
+//   for (let i = 0; i < n; i++) {
+//     // i-dp[i-1]-1是与当前")"对称的位置
+//     if (
+//       s[i] === ')' &&
+//       i - dp[i - 1] - 1 >= 0 &&
+//       s[i - dp[i - 1] - 1] === '('
+//     ) {
+//       dp[i] = dp[i - 1] + dp[i - dp[i - 1] - 2 <= 0 ? 0 : i - dp[i - 1] - 2] + 2
+//     }
+//   }
+//   return Math.max(...dp)
+// }
+
+/**
+ * 栈
+ * @param s stirng
+ * @returns 返回值为number
+ */
 export function longestValidParentheses(s: string): number {
-  const n = s.length
-  if (n === 0) return 0
-  const dp = Array.from(new Array(n), () => 0)
+  const stack = [-1],
+    n = s.length
+  let length = 0,
+    max_length = 0
   for (let i = 0; i < n; i++) {
-    // i-dp[i-1]-1是与当前")"对称的位置
-    if (
-      s[i] === ')' &&
-      i - dp[i - 1] - 1 >= 0 &&
-      s[i - dp[i - 1] - 1] === '('
-    ) {
-      dp[i] = dp[i - 1] + dp[i - dp[i - 1] - 2 <= 0 ? 0 : i - dp[i - 1] - 2] + 2
+    if (s[i] === '(') {
+      stack.push(i)
+    } else {
+      stack.pop()
+      if (stack.length === 0) {
+        stack.push(i)
+      } else {
+        length = i - stack[stack.length - 1]
+        max_length = Math.max(max_length, length)
+      }
     }
   }
-  return Math.max(...dp)
+  return max_length
 }
 
-const s = '()'
+const s = '()(())'
 const res = longestValidParentheses(s)
 console.log(res)
