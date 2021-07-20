@@ -175,6 +175,14 @@
       "program": "${workspaceFolder}/src/series22-nextPermutation.ts",
       "preLaunchTask": "tsc: build - tsconfig.json",
       "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    },
+    {
+      "name": "typescript node project23",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/series23-longsetValidParentheses.ts",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/build/**/*.js"]
     }
   ]
 }
