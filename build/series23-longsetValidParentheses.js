@@ -53,6 +53,11 @@ exports.longestValidParentheses = void 0;
 //   }
 //   return Math.max(...dp)
 // }
+/**
+ * 栈
+ * @param s stirng
+ * @returns 返回值为number
+ */
 function longestValidParentheses(s) {
     var stack = [-1], n = s.length;
     var length = 0, max_length = 0;
